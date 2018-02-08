@@ -81,9 +81,6 @@
     </style>
   </head>
   <body onclick="playMusic()">
-    <audio id="music" autoplay>
-      <source src="mine-diamonds.mp3" type="audio/mpeg">
-    </audio>
     <div id="background-stairs"></div>
     <div id="falling-stairs">
       <img src="stairs1.png" style="left: 0%; animation-duration: 2s" />
@@ -98,8 +95,13 @@
     </div>
     <div id="tyrell"></div>
     <div id="message">Click to play/pause music</div>
+    <audio id="music" autoplay>
+      <source src="mine-diamonds.mp3" type="audio/mpeg">
+    </audio>
 
     <script>
+      document.body.addEventListener('touchstart', playMusic);
+
       function playMusic() {
         var music = document.getElementById('music');
         if (music.paused) {
