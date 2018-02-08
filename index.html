@@ -62,6 +62,22 @@
 
         animation: fall 3s infinite ease-in both;
       }
+
+      #message {
+        width: 100%;
+        padding: 20px 0;
+        font-size: 24px;
+        color: #fff;
+        font-family: sans-serif;
+        text-align: center;
+
+        animation: fade-out 1s both 2s;
+      }
+
+      @keyframes fade-out {
+        from { opacity: 1; }
+        to { opacity: 0; }
+      }
     </style>
   </head>
   <body onclick="playMusic()">
@@ -81,6 +97,7 @@
       <img src="stairs2.png" style="left: 50%; animation-duration: 3s" />
     </div>
     <div id="tyrell"></div>
+    <div id="message">Click to play/pause music</div>
 
     <script>
       function playMusic() {
