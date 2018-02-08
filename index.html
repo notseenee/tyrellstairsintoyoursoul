@@ -86,7 +86,7 @@
       }
     </style>
   </head>
-  <body onclick="playMusic()">
+  <body>
     <div id="background-stairs"></div>
     <div id="falling-stairs">
       <img src="stairs1.png" style="left: 0%; animation-duration: 2s" />
@@ -106,10 +106,15 @@
     </audio>
 
     <script>
-      document.body.addEventListener('touchstart', playMusic);
+      var music = document.getElementById('music');
+
+      if ('ontouchstart' in document.documentElement) {
+        document.body.addEventListener('touchend', playMusic);
+      } else {
+        document.body.addEventListener('click', playMusic);
+      }
 
       function playMusic() {
-        var music = document.getElementById('music');
         if (music.paused) {
           music.play();
         } else {
