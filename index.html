@@ -64,8 +64,8 @@
       }
     </style>
   </head>
-  <body>
-    <audio autoplay>
+  <body onclick="playMusic()">
+    <audio id="music" autoplay>
       <source src="mine-diamonds.mp3" type="audio/mpeg">
     </audio>
     <div id="background-stairs"></div>
@@ -81,5 +81,16 @@
       <img src="stairs2.png" style="left: 50%; animation-duration: 3s" />
     </div>
     <div id="tyrell"></div>
+
+    <script>
+      function playMusic() {
+        var music = document.getElementById('music');
+        if (music.paused) {
+          music.play();
+        } else {
+          music.pause();
+        }
+      }
+    </script>
   </body>
 </html>
